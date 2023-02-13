@@ -2,6 +2,8 @@ import os
 import random, string
 import datetime as dt
 
+# this includes all of the exercises in 1 program excluding password thingy
+
 intro = f"""
 
                                                 1 SumOfNumbers
@@ -9,7 +11,7 @@ intro = f"""
                                                 3 EvenOrOddForLoop
                                                 4 EvenOrOddWhileLoop
                                                 5 Biggest
-                                                6 PasswordCrack
+                                               
 
 """
 
@@ -28,20 +30,7 @@ def IsEven(a):
         print(bool(False))
     return    
 
-
-def PasswordCrack():
-    print('Your password (4 characters)', end=''); num = str(input('  :  '))
-    times =0
-    print("Cracking password...")
-    while True:
-        passwordtest = ''.join(random.choices(string.ascii_letters + string.digits, k=4))
-        if passwordtest == num:
-            times+=1
-            print(f"cracked password! '{passwordtest}', It took {times} amount of tries")
-            break
-        else:
-            times+=1
-            pass      
+      
 
 def EvenOrOddForLoop(num):
 
@@ -101,10 +90,6 @@ def startmenu():
         print("Biggest Output")
         print(Biggest([3,5,-2,8,1]))
         
-    elif choice == '6':
-        os.system('cls')
-        PasswordCrack()
-
 
 if __name__ == '__main__':
     startmenu()
